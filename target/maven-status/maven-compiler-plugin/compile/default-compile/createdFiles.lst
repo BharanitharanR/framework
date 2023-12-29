@@ -1,0 +1,4 @@
+com/batty/framework/datastore/DatabaseHandler.class
+com/batty/framework/datastore/DatastoreUtil.class
+com/batty/framework/ServiceApplication.class
+com/batty/framework/interfaces/DatastoreInterface.class
