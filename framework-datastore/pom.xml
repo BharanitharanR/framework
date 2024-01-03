@@ -9,16 +9,16 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.batty</groupId>
-	<artifactId>framework</artifactId>
+	<artifactId>framework-datastore</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>framework</name>
-	<description>Framework attempt</description>
+	<name>framework-datastore</name>
+	<description>Framework datastore attempt</description>
 	<packaging>jar</packaging>
 	<properties>
 		<java.version>21</java.version>
 		<project.id>service</project.id>
 		<JAR_FILE>${project.basedir}/target/${artifactId}-${version}.jar</JAR_FILE>
-		<docker.repo>bharani3ran01/servicesrepo</docker.repo>
+		<docker.repo>bharani3ran01/frameworkrepo</docker.repo>
 		<docker.image.tag>${version}</docker.image.tag>
 	</properties>
 	<dependencies>
