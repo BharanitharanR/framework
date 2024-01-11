@@ -63,6 +63,13 @@
 			<version>0.43.4</version>
 		</dependency>
 	</dependencies>
+	<distributionManagement>
+		<repository>
+			<id>github</id>
+			<name>GitHub OWNER Apache Maven Packages</name>
+			<url>https://maven.pkg.github.com/OWNER/REPOSITORY</url>
+		</repository>
+	</distributionManagement>
 	<modules>
 		<module>framework-datastore</module>
 		<module>framework-registry</module>
