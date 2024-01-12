@@ -118,16 +118,14 @@ public class DatabaseHandler {
         }
     }
 
-    public <T> T removeOne(Document doc, Class<T> clazz) {
+    public Long removeOne(Document doc) {
+        Long response = 0L;
         try {
-            Document response = (Document) this.collection.remove(doc).first();
-            if (response != null) {
-                return objectMapper.readValue(response.toJson(), clazz);
-            }
+               return this.collection.deleteOne(doc).getDeletedCount();
         } catch (Exception e) {
             log.info("find error: " + e);
+            return response;
         }
-        return null;
     }
 
 
