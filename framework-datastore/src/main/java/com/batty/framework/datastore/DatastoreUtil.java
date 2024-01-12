@@ -4,6 +4,7 @@ import com.batty.framework.interfaces.DatastoreInterface;
 import com.mongodb.client.MongoClient;
 import com.mongodb.client.MongoCollection;
 import com.mongodb.client.MongoDatabase;
+import com.mongodb.client.model.Filters;
 import com.mongodb.client.model.IndexOptions;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -17,10 +18,17 @@ public class DatastoreUtil {
 
     protected IndexOptions idx;
 
+    protected Filters filter;
+
     public IndexOptions getOptions()
     {
         this.idx = new IndexOptions();
         return this.idx;
 
+    }
+
+    public Filters getFilter()
+    {
+        return this.filter;
     }
 }

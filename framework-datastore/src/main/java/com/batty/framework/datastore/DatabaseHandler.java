@@ -16,6 +16,7 @@ import org.springframework.boot.autoconfigure.mongo.MongoAutoConfiguration;
 import org.springframework.stereotype.Component;
 import com.mongodb.client.MongoClient;
 import com.mongodb.client.MongoClients;
+import org.bson.conversions.Bson;
 
 import java.util.Date;
 import java.util.List;
@@ -118,7 +119,7 @@ public class DatabaseHandler {
         }
     }
 
-    public Long removeOne(Document doc) {
+    public Long removeOne(Bson doc) {
         Long response = 0L;
         try {
                return this.collection.deleteOne(doc).getDeletedCount();
