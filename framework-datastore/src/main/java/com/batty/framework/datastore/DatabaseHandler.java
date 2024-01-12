@@ -118,6 +118,19 @@ public class DatabaseHandler {
         }
     }
 
+    public <T> T removeOne(Document doc, Class<T> clazz) {
+        try {
+            Document response = (Document) this.collection.remove(doc).first();
+            if (response != null) {
+                return objectMapper.readValue(response.toJson(), clazz);
+            }
+        } catch (Exception e) {
+            log.info("find error: " + e);
+        }
+        return null;
+    }
+
+
     public Object findOne(Document doc)
     {
         Document response = null;
