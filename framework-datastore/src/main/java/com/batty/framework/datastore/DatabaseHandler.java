@@ -5,6 +5,7 @@ import com.mongodb.client.MongoCollection;
 import com.mongodb.client.MongoDatabase;
 import com.mongodb.client.model.*;
 import com.mongodb.client.result.InsertOneResult;
+import com.mongodb.client.result.UpdateResult;
 import jakarta.annotation.PostConstruct;
 import org.bson.Document;
 import org.slf4j.Logger;
@@ -119,6 +120,28 @@ public class DatabaseHandler {
         }
     }
 
+    public boolean updateOne(Document query, Document doc)
+    {
+        boolean status = false;
+        UpdateResult result = null;
+        // Set upsert to true, caller have to handle passing the doc efficiently
+        UpdateOptions updateOptions = new UpdateOptions().upsert(true);
+        try
+        {
+            result = this.collection.updateOne(query, doc, updateOptions);
+            if(result.getModifiedCount() >= 1 ) { status = true; }
+            log.info("is inserted:"+result.getUpsertedId());
+        }
+        catch(Exception ignored)
+        {
+            log.info("update failed:"+ignored);
+            status = false;
+        }
+        finally
+        {
+            return status;
+        }
+    }
     public Long removeOne(Bson doc) {
         Long response = 0L;
         try {
