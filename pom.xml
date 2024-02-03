@@ -72,6 +72,7 @@
 	</distributionManagement>
 	<modules>
 		<module>framework-datastore</module>
-		<module>framework-registry</module>
+		<!-- <module>framework-registry</module> -->
+		<module>framework-message</module>
 	</modules>
 </project>
