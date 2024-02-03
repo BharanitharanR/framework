@@ -2,3 +2,6 @@
 .idea/misc.xml
 .idea/compiler.xml
 framework-registry/target/*
+framework-datastore/target/*
+framework-message/target/*
+framework-scheduler/target/*
